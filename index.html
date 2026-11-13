@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #0066cc;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>AI Resume Analyzer</h1>
+        <p>Upload your resume to get instant feedback and analysis.</p>
+        
+        <input type="file" id="resumeFile" accept=".pdf,.doc,.docx"><br>
+        <button onclick="analyzeResume()">Analyze Resume</button>
+        
+        <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+    </div>
+
+    <script>
+        function analyzeResume() {
+            const fileInput = document.getElementById('resumeFile');
+            const resultText = document.getElementById('result');
+            
+            if (fileInput.files.length > 0) {
+                resultText.style.color = "green";
+                resultText.textContent = "Resume uploaded successfully! Processing analysis...";
+            } else {
+                resultText.style.color = "red";
+                resultText.textContent = "Please select a resume file first.";
+            }
+        }
+    </script>
+
+</body>
+</html>
